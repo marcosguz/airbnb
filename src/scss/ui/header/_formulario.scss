@@ -1,0 +1,61 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.formulario {
+    background-color: v.$blanco;
+    border-radius: 5rem;
+    box-shadow: 0px 3px 7px 0px v.$gris;
+    margin: 5rem auto 2rem auto;
+    padding: 3rem 0;
+
+    @include m.desktop {
+        display: flex;
+        justify-content: space-between;
+        max-width: 90rem;
+        padding: 0;
+    }
+
+    &__campo {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 2rem;
+
+        &:nth-child(1) {
+            @include m.desktop {
+                padding-left: 4rem;
+            }
+        }
+
+        &:hover {
+            background-color: #F0F0F0F0;
+            border-radius: 5rem;
+            box-shadow: 0px 6px 20px rgb(0 0 0 / .4);
+        }
+    }
+
+    &__label {
+        font-size: 1.2rem;
+        font-weight: 900;
+    }
+
+    &__input {
+        border: none;
+        color: v.$gris;
+        outline: none;
+        width: 100%;
+    }
+
+    &__submit {
+        background-image: radial-gradient( circle, rgb(255, 56, 92) 0%, v.$secundario 100% );
+        border: none;
+        border-radius: 2rem;
+        color: v.$blanco;
+        cursor: pointer;
+        display: block;
+        font-size: 1.2rem;
+        font-weight: 700;
+        height: 4rem;
+        padding: 0 4rem;
+        text-transform: uppercase;
+    }
+}
